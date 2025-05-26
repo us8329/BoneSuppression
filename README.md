@@ -3,7 +3,7 @@
 
 ---
 
-## Project Snapshot
+## 📜 Project Snapshot
 | Component | Purpose |
 |-----------|---------|
 | **Bone-Suppression Autoencoder** | Learns a pixel-level mapping that eliminates ribs/clavicles while enhancing soft-tissue contrast. |
@@ -12,12 +12,12 @@
 
 ---
 
-## Motivation
+## 🎯 Motivation
 Chest X-rays are cheap and ubiquitous, but bony anatomy often masks subtle lung lesions. CT or dual-energy subtraction solve this at the cost of **~70× higher radiation** and special hardware. Our goal:  
 > *Generate CT-like “bone-free” CXRs in software, then prove that doing so **improves automated TB detection**.* 
 ---
 
-## Data
+## 🗂️ Data
 | Source | Images | Notes |
 |--------|--------|-------|
 | **Dataset A** | 4,080 augmented CXRs (light background) | Provides diversity in exposure/contrast |
@@ -28,7 +28,7 @@ For TB labels we used the **Rahman et al.** public TB-CXR set (split 80 / 10 / 1
 
 ---
 
-## Method
+## 🏗️  Method
 1. **Autoencoder**  
    *Encoder → Bottleneck → Dual Decoder* trained with **MAE + MSE + reconstruction loss** to suppress bone signal (best validation MAE ≈ 0.02). 
 2. **Binary CNN Classifier**  
@@ -39,7 +39,7 @@ For TB labels we used the **Rahman et al.** public TB-CXR set (split 80 / 10 / 1
 
 ---
 
-## Visual Comparison
+## 🖼️ Visual Comparison
 
 <p align="center">
   <img src="images/Pre-ae.jpg"  alt="Raw chest X-ray with bones" width="45%"/> &nbsp;
@@ -51,7 +51,7 @@ Right: autoencoder output revealing lung parenchyma for clearer TB cues.*
 
 
 
-## Key Results
+## 📈 Key Results
 | Model | Test Accuracy | Δ vs Raw |
 |-------|--------------|----------|
 | Raw CXR CNN | **92 %** | — |
